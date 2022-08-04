@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backgroundblur{
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./assets/fase1.jpg");
+    background-size: cover;
+}
+
+.backgroundblack{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.3;
+}
+
+.backgroundblur::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px); 
+    pointer-events: none;
+}
+
+#background {
+    position: absolute;
+    z-index: -1;
+    width: 40vw;
+    height: 100vh;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#backgroundblur {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(2px) brightness(0.5);
+    -webkit-filter: blur(2px) brightness(0.5);
+    background-color: black;
+    background-size: cover;
+}
+
+#game {
+    width: 40vw;
+    height: 100vh;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#block1 {
+    width: 50px;
+    height: 2%;
+    background-color: rgb(48, 158, 231);
+    position: relative;
+    animation: block 3s infinite linear;
+    left: 600px;
+}
+
+#block2 {
+    width: 50px;
+    height: 68%;
+    background-color: rgb(48, 158, 231);
+    position: relative;
+    top: 30%;
+    animation: block 3s infinite linear;
+    left: 600px;
+}
+
+@keyframes block {
+    0% {
+        left: 1000px;
+    }
+
+    100% {
+        left: -50px;
+    }
+}
+
+#character {
+    width: 80px;
+    height: 100px;
+    position: relative;
+    top: -40%;
+    margin-left: 85px;
+    background-image: url("./assets/sprite_0.png");
+    background-size: cover;
+}
+
+@keyframes character {
+    0%{
+        background-image: url("./assets/sprite_0.png");
+    }
+
+    16.66%{
+        background-image: url("./assets/sprite_1.png");
+    }
+
+    33.33%{
+        background-image: url("./assets/sprite_2.png");
+    }
+
+    50%{
+        background-image: url("./assets/sprite_3.png");
+    }
+
+    66.66%{
+        background-image: url("./assets/sprite_2.png");
+    }
+
+    83.33%{
+        background-image: url("./assets/sprite_1.png");
+    }
+
+    100%{
+        background-image: url("./assets/sprite_0.png");
+    }
+}
