@@ -65,6 +65,16 @@ body {
     z-index: 1;
 }
 
+#counter{
+    position: absolute;
+    font-size: 35px;
+    color: white;
+    width: 38%;
+    display: flex;
+    justify-content: center;
+
+}
+
 #block1 {
     width: 50px;
     height: 2%;
