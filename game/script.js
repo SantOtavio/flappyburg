@@ -76,23 +76,21 @@ var interval = setInterval(() => {
     var boxBird = bird.getBoundingClientRect();
     var boxAviao = aviao.getBoundingClientRect();
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-    var cTop = -(500 - characterTop);
-    // if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
-    // || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
-    //     const nick = localStorage.getItem("nickname");
-    //     let user = {nick, realCounter}
-    //     listaUsers.push(user);
-    //     listaUsers = JSON.stringify(listaUsers);
-    //     localStorage.setItem("user", listaUsers);
-    //     alert("Você Perdeu!")
-    //     character.style.top = "-40%"
-    //     realCounter = 0;
-    //     window.location.href = "http://127.0.0.1:5500/menu/index.html"
-    //     localStorage.removeItem("nickname");
-    // }
+    if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
+    || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
+        const nick = localStorage.getItem("nickname");
+        let user = {nick, realCounter}
+        listaUsers.push(user);
+        listaUsers = JSON.stringify(listaUsers);
+        localStorage.setItem("user", listaUsers);
+        alert("Você Perdeu!")
+        character.style.top = "-40%"
+        realCounter = 0;
+        window.location.href = "http://127.0.0.1:5500/menu/index.html"
+        localStorage.removeItem("nickname");
+    }
     
     var blockLeft = parseInt(window.getComputedStyle(block1).getPropertyValue("left"));
-    var aviaoLeft = parseInt(window.getComputedStyle(aviao).getPropertyValue("left"));
     if (blockLeft <= 10) {
         counter++;
         counter2++;
