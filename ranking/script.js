@@ -1,62 +1,56 @@
-const top1 = document.querySelector("body > div.menu-container > div > div.containerRanking > div.top1 > h1");
-const top2 = document.querySelector("body > div.menu-container > div > div.containerRanking > div.top2 > h1");
-const top3 = document.querySelector("body > div.menu-container > div > div.containerRanking > div.top3 > h1");
+let firstArr = [];
+let rankArr = [];
+let counter = 1;
+let top3 = 0;
+let pos = 0;
+
 
 
 function onInit() {
     var ranktitle1 = document.getElementById("ranktitle1");
     var ranktitle2 = document.getElementById("ranktitle2");
     var ranktitle3 = document.getElementById("ranktitle3");
-    let firstArr = [];
-    let rankArr = [];
-    let counter = 1;
-    let top3 = 0;
-    console.log("foi");
+
+    firstArr.splice(0);
+
+
     if (localStorage.getItem("user")) {
         firstArr = JSON.parse(localStorage.getItem("user"));
 
-        for (let i = 0; i < firstArr.length; i++) {
-            for (let j = 0; j < firstArr.length; j++) {
-                if (firstArr[i].realCounter > firstArr[j].realCounter) {
-                    counter++;
-                }
-            }
-            if (top3 < 3) {
-                if (counter == (firstArr.length -1) || counter == (firstArr.length - 2)
-                    || counter == (firstArr.length - 3)) {
-                    rankArr.push(firstArr[i]);
-                    top3++;
-                }
+        for(i = 0; i < 3; i++){
+            returnBigger();
+            maior = 0;
+            nick = "";
+        }
+        
+
+    }
+
+    if (rankArr.length > 0) {
+        ranktitle1.innerText = rankArr[0].nick + " - " + rankArr[0].realCounter + " pts";
+        if (rankArr.length > 1) {
+            ranktitle2.innerText = rankArr[1].nick + " - " + rankArr[1].realCounter + " pts";
+            if (rankArr.length > 2) {
+                ranktitle3.innerText = rankArr[2].nick + " - " + rankArr[2].realCounter + " pts";
             }
         }
     }
-    console.log(rankArr);
-    if (rankArr.length == 2) {
-        console.log("a")
-        if (rankArr[0].realCounter > rankArr[1].realCounter) {
-            ranktitle1.innerText = rankArr[0].realCounter;
-        } else{
-            ranktitle1.innerText = rankArr[1].realCounter;
-        }
-    }else{
-        for (let i = 0; i < rankArr.length; i++) {
-            counter = 0;
-            for (let j = 0; j < rankArr.length; j++) {
-                if (rankArr[i].realCounter >= rankArr[j].realCounter) {
-                    counter++;
-                }
-            }
-            if (counter == rankArr.length) {
-                ranktitle1.innerText = rankArr[i].realCounter;
-            } else if (counter == (rankArr.length - 1)) {
-                ranktitle2.innerText = rankArr[i].realCounter;
-            } else {
-                ranktitle3.innerText = rankArr[i].realCounter;
-            }
-    
+}
+
+function returnBigger(){
+    let maior = 0;
+    let nick = "";
+
+    for(j = 0; j < firstArr.length; j++){
+        if(maior < firstArr[j].realCounter){
+            maior = firstArr[j].realCounter;
+            nick = firstArr[j].nick;
+            pos = j
         }
     }
 
+    rankArr.push({nick: nick, realCounter: maior});
+    firstArr.splice(pos, pos + 1);
 }
 
 onInit();
