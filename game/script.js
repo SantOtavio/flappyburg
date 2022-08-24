@@ -24,7 +24,6 @@ game.addEventListener('animationiteration', () => {
     var random2 = (70 - random1);
     var random3 = Math.floor(Math.random() * 86);
     var spriteRandom = Math.floor(Math.random() * 2);
-    console.log(spriteRandom);
     setHeight(random1, random2, random3);
     if (counter > 0) {
         realCounter = realCounter + ((counter2 + 1) - counter);
@@ -70,7 +69,6 @@ var interval = setInterval(() => {
         listaUsers.push(user);
         listaUsers = JSON.stringify(listaUsers);
         localStorage.setItem("user", listaUsers);
-        localStorage.setItem("pontuacao", user.realCounter);
         alert("Você Perdeu!")
         character.style.top = "-40%"
         realCounter = 0;

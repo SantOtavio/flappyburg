@@ -110,21 +110,21 @@ body {
     cursor: pointer;
 }
 
-.ranktitle1{
+#ranktitle1{
     font-size: 1.5rem;
     color: white;
     font-weight: light;
     font-family: Bit4;
 }
 
-.ranktitle2{
+#ranktitle2{
     font-size: 1.5rem;
     color: white;
     font-weight: light;
     font-family: Bit4;
 }
 
-.ranktitle3{
+#ranktitle3{
     font-size: 1.5rem;
     color: white;
     font-weight: light;
