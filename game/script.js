@@ -41,9 +41,10 @@ game.addEventListener('animationiteration', () => {
             bird.style.display = "none"
         }
     }
-    if(realCounter == 10){
-        background.style.background =  "url(" + aviao.style.background-image + ")";
-    }
+    let link = "./assets/fase2.jpg"
+    // if(realCounter == 10){
+    //     background.style.background-image =  "url" + link;
+    // }
     var counterHtml = document.getElementById("counter");
     counterHtml.innerText = realCounter;
 });
