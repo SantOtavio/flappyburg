@@ -5,6 +5,7 @@ var game = document.getElementById("game");
 var character = document.getElementById("character");
 var aviao = document.getElementById("div-plane");
 var bird = document.getElementById("div-bird");
+var background = document.getElementsByClassName("backgroundblur");
 var jumping = 0;
 var counter = 0;
 var counter2 = 0;
@@ -39,6 +40,9 @@ game.addEventListener('animationiteration', () => {
             aviao.style.display = "none"
             bird.style.display = "none"
         }
+    }
+    if(realCounter == 10){
+        background.style.background =  "url(" + aviao.style.background-image + ")";
     }
     var counterHtml = document.getElementById("counter");
     counterHtml.innerText = realCounter;
