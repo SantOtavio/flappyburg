@@ -39,10 +39,12 @@ var interval = setInterval(() => {
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var cTop = -(500 - characterTop);
     if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))) {
-        alert("You lose");
+        alert("Você Perdeu!")
         localStorage.setItem("score", realCounter);
         realCounter = 0;
         character.style.top = "-40%"
+        window.location.href = "http://127.0.0.1:5500/menu/index.html"
+        localStorage.removeItem("nickname");
     }
 
     var blockLeft = parseInt(window.getComputedStyle(block1).getPropertyValue("left"));

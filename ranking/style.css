@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "FlappyBirdy";
+    src: url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.eot");
+    src: url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.woff") format("woff"), url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5bb5346e778802b48cf949a0b425d438.svg#FlappyBirdy") format("svg");
+}
+
+
+@font-face {
+    font-family: "Bit4";
+    src: url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.eot");
+    src: url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.woff") format("woff"), url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4c16d315c292d50ce5bf855fd2cfc403.svg#Bit4") format("svg");
+}
+
+@import url(//db.onlinewebfonts.com/c/4c16d315c292d50ce5bf855fd2cfc403?family=Bit4);
+@import url(//db.onlinewebfonts.com/c/5bb5346e778802b48cf949a0b425d438?family=FlappyBirdy);
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.backgroundblur {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../game/assets/fase1.jpg");
+    background-size: cover;
+}
+
+
+.backgroundblur::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+}
+
+.menu-container {
+    width: 30rem;
+    height: 35rem;
+    background-color: rgb(10 126 237);
+    border-radius: 2rem;
+    border: 1.5rem solid rgb(8, 69, 126);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlegame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: FlappyBirdy;
+    width: 100%;
+    height: 4rem;
+}
+
+.titlegame-main {
+    font-size: 8rem;
+    color: white;
+    font-weight: lighter;
+}
+
+.list-itens {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    font-family: FlappyBirdy;
+}
+
+.nickinput{
+    outline: none;
+    width: 10rem;
+    height: 2rem;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 2px inset black;
+}
+
+.see-ranking{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: light;
+    font-family: Bit4;
+    cursor: pointer;
+}
+
+.start-game {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: light;
+    font-family: Bit4;
+    cursor: pointer;
+}
+
+.ranktitle1{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: light;
+    font-family: Bit4;
+}
+
+.ranktitle2{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: light;
+    font-family: Bit4;
+}
+
+.ranktitle3{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: light;
+    font-family: Bit4;
+}
