@@ -183,6 +183,21 @@ body {
     animation: block 3s infinite linear;
 }
 
+#div-bird{
+    display: none;
+    width: 10%;
+    height: 15%;
+    position: absolute;
+    left: 600px;
+    overflow: hidden;
+    z-index: -1;
+    top: 6%;
+    margin-left: 85px;
+    background-image: url(./assets/abelha-sprite.png);
+    background-size: cover;
+    animation: block 3s infinite linear;
+}
+
 @keyframes haha {
     0% {
         left: 1000px;

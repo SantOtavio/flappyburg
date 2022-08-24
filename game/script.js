@@ -5,7 +5,9 @@ var game = document.getElementById("game");
 var character = document.getElementById("character");
 var aviao = document.getElementById("div-plane");
 var bird = document.getElementById("div-bird");
-var background = document.getElementsByClassName("backgroundblur");
+var abelha = document.getElementById("div-abelha");
+var background = document.getElementById("background");
+var backgroundBlur = document.querySelector("body > div.backgroundblur")
 var jumping = 0;
 var counter = 0;
 var counter2 = 0;
@@ -13,9 +15,7 @@ var realCounter = 0;
 
 let listaUsers = [];
 if(localStorage.getItem("user")){
-    console.log(localStorage.getItem("user"));
     listaUsers = JSON.parse(localStorage.getItem("user"));
-    console.log(listaUsers[0]);
 }
 
 game.addEventListener('animationiteration', () => {
@@ -24,27 +24,33 @@ game.addEventListener('animationiteration', () => {
     var random1 = Math.floor(Math.random() * 70);
     var random2 = (70 - random1);
     var random3 = Math.floor(Math.random() * 86);
-    var spriteRandom = Math.floor(Math.random() * 2);
+    var spriteRandom = Math.floor(Math.random() * 4);
     setHeight(random1, random2, random3);
     if (counter > 0) {
         realCounter = realCounter + ((counter2 + 1) - counter);
         counter2 = 0;
         counter = 0;
         if (realCounter % 3 === 0) {
-            if (spriteRandom >= 1) {
-                aviao.style.display = "block"
-            } else {
-                bird.style.display = "block"
+            if (spriteRandom >= 1 && spriteRandom < 2) {
+                aviao.style.display = "block";
+            }else if(spriteRandom >= 2 && spriteRandom <3) {
+                abelha.style.display = "block";
+            }else if(spriteRandom >= 3 && spriteRandom < 4){
+                
+            }
+            else {
+                bird.style.display = "block";
             }
         } else {
             aviao.style.display = "none"
             bird.style.display = "none"
+            abelha.style.display = "none";
         }
     }
-    let link = "./assets/fase2.jpg"
-    // if(realCounter == 10){
-    //     background.style.background-image =  "url" + link;
-    // }
+    if(realCounter == 2){
+        background.src =  "./assets/fase2.jpg";
+        backgroundBlur.style.backgroundImage = "url(./assets/fase2.jpg)";
+    }
     var counterHtml = document.getElementById("counter");
     counterHtml.innerText = realCounter;
 });
@@ -60,6 +66,7 @@ var interval = setInterval(() => {
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     character.style.top = (characterTop + 3) + "px";
     
+
     var boxBlock1 = document.getElementById("block1").getBoundingClientRect();
     var boxCharacter = character.getBoundingClientRect();
     var boxBlock2 = block2.getBoundingClientRect();
