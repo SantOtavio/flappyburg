@@ -27,6 +27,13 @@ body {
     opacity: 0.3;
 }
 
+#invisivel{
+    width: 1%;
+    height: 100vh;
+    position: relative;
+    left: 406px;
+}
+
 .backgroundblur::after{
     content: "";
     position: absolute;
@@ -104,6 +111,8 @@ body {
     }
 }
 
+
+
 #character {
     width: 80px;
     height: 100px;
@@ -141,5 +150,45 @@ body {
 
     100%{
         background-image: url("./assets/sprite_0.png");
+    }
+}
+
+#div-plane{
+    display: none;
+    width: 10%;
+    height: 15%;
+    position: absolute;
+    left: 600px;
+    overflow: hidden;
+    z-index: -1;
+    top: 6%;
+    margin-left: 85px;
+    background-image: url(./assets/aviao-sprite.png);
+    background-size: cover;
+    animation: block 3s infinite linear;
+}
+
+#div-bird{
+    display: none;
+    width: 10%;
+    height: 15%;
+    position: absolute;
+    left: 600px;
+    overflow: hidden;
+    z-index: -1;
+    top: 6%;
+    margin-left: 85px;
+    background-image: url(./assets/bird-sprite.png);
+    background-size: cover;
+    animation: block 3s infinite linear;
+}
+
+@keyframes haha {
+    0% {
+        left: 1000px;
+    }
+
+    100% {
+        left: -150px;
     }
 }
