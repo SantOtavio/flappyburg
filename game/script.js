@@ -1,6 +1,5 @@
 var block1 = document.getElementById("block1");
 var block2 = document.getElementById("block2");
-var invisivel = document.getElementById("invisivel");
 var game = document.getElementById("game");
 var character = document.getElementById("character");
 var aviao = document.getElementById("div-plane");
@@ -75,6 +74,8 @@ var interval = setInterval(() => {
     var boxBlock2 = block2.getBoundingClientRect();
     var boxBird = bird.getBoundingClientRect();
     var boxAviao = aviao.getBoundingClientRect();
+    var boxBee  =abelha.getBoundingClientRect();
+    var boxRoma = roma.getBoundingClientRect();
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
     || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
