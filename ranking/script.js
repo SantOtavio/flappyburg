@@ -8,24 +8,24 @@ rankArr = [];
 
 function onInit() {
     console.log("foi");
-    if (localStorage.length > 0) {
-        firstArr.push(localStorage.getItem("counterArr"));
+    // if (localStorage.length > 0) {
+    //     firstArr.push(localStorage.getItem("counterArr"));
 
-        //maior = firstArr[0][0];
+    //     maior = firstArr[0][0];
 
-        // for (i = 0; i < 3; i++) {
-        //     for (n = 0; n < firstArr.length; i++) {
-        //         if (maior < firstArr[n]) {
-        //             maior = firstArr[n];
-        //         }
-        //     }
-        //     rankArr.push(maior);
-        // }
+    //     for (i = 0; i < 3; i++) {
+    //         for (n = 0; n < firstArr.length; i++) {
+    //             if (maior < firstArr[n]) {
+    //                 maior = firstArr[n];
+    //             }
+    //         }
+    //         rankArr.push(maior);
+    //     }
 
-        top1.innerHTML = rankArr[0];
-        top2.innerHTML = rankArr[1];
-        top3.innerHTML = rankArr[2];
-    }
+    //     top1.innerHTML = rankArr[0];
+    //     top2.innerHTML = rankArr[1];
+    //     top3.innerHTML = rankArr[2];
+    // }
 }
 
 onInit();

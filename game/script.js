@@ -10,6 +10,13 @@ var counter = 0;
 var counter2 = 0;
 var realCounter = 0;
 
+let listaUsers = [];
+if(localStorage.getItem("user")){
+    console.log(localStorage.getItem("user"));
+    listaUsers = JSON.parse(localStorage.getItem("user"));
+    console.log(listaUsers[0]);
+}
+
 game.addEventListener('animationiteration', () => {
     block1.style.height = "35%";
     block2.style.height = "35%";
@@ -60,7 +67,10 @@ var interval = setInterval(() => {
     || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
         const nick = localStorage.getItem("nickname");
         let user = {nick, realCounter}
-        localStorage.setItem("user", user);
+        listaUsers.push(user);
+        listaUsers = JSON.stringify(listaUsers);
+        localStorage.setItem("user", listaUsers);
+        localStorage.setItem("pontuacao", user.realCounter);
         alert("Você Perdeu!")
         character.style.top = "-40%"
         realCounter = 0;
