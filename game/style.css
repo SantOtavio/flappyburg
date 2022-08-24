@@ -183,7 +183,7 @@ body {
     animation: block 3s infinite linear;
 }
 
-#div-bird{
+#div-abelha{
     display: none;
     width: 10%;
     height: 15%;
@@ -194,6 +194,20 @@ body {
     top: 6%;
     margin-left: 85px;
     background-image: url(./assets/abelha-sprite.png);
+    background-size: cover;
+    animation: block 3s infinite linear;
+}
+#div-roma{
+    display: none;
+    width: 8%;
+    height: 17%;
+    position: absolute;
+    left: 600px;
+    overflow: hidden;
+    z-index: -1;
+    top: 6%;
+    margin-left: 85px;
+    background-image: url(./assets/roma-sprite.png);
     background-size: cover;
     animation: block 3s infinite linear;
 }

@@ -6,6 +6,7 @@ var character = document.getElementById("character");
 var aviao = document.getElementById("div-plane");
 var bird = document.getElementById("div-bird");
 var abelha = document.getElementById("div-abelha");
+var roma = document.getElementById("div-roma");
 var background = document.getElementById("background");
 var backgroundBlur = document.querySelector("body > div.backgroundblur")
 var jumping = 0;
@@ -30,13 +31,15 @@ game.addEventListener('animationiteration', () => {
         realCounter = realCounter + ((counter2 + 1) - counter);
         counter2 = 0;
         counter = 0;
+        console.log("real: ",realCounter)
+        console.log("sprite: ",spriteRandom)
         if (realCounter % 3 === 0) {
-            if (spriteRandom >= 1 && spriteRandom < 2) {
+            if (spriteRandom === 0) { 
                 aviao.style.display = "block";
-            }else if(spriteRandom >= 2 && spriteRandom <3) {
+            }else if(spriteRandom === 1) {
                 abelha.style.display = "block";
-            }else if(spriteRandom >= 3 && spriteRandom < 4){
-                
+            }else if(spriteRandom === 2){
+                roma.style.display = "block";
             }
             else {
                 bird.style.display = "block";
@@ -45,9 +48,10 @@ game.addEventListener('animationiteration', () => {
             aviao.style.display = "none"
             bird.style.display = "none"
             abelha.style.display = "none";
+            roma.style.display = "none";
         }
     }
-    if(realCounter == 2){
+    if(realCounter == 10){
         background.src =  "./assets/fase2.jpg";
         backgroundBlur.style.backgroundImage = "url(./assets/fase2.jpg)";
     }
@@ -66,7 +70,6 @@ var interval = setInterval(() => {
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     character.style.top = (characterTop + 3) + "px";
     
-
     var boxBlock1 = document.getElementById("block1").getBoundingClientRect();
     var boxCharacter = character.getBoundingClientRect();
     var boxBlock2 = block2.getBoundingClientRect();
@@ -74,19 +77,19 @@ var interval = setInterval(() => {
     var boxAviao = aviao.getBoundingClientRect();
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var cTop = -(500 - characterTop);
-    if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
-    || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
-        const nick = localStorage.getItem("nickname");
-        let user = {nick, realCounter}
-        listaUsers.push(user);
-        listaUsers = JSON.stringify(listaUsers);
-        localStorage.setItem("user", listaUsers);
-        alert("Você Perdeu!")
-        character.style.top = "-40%"
-        realCounter = 0;
-        window.location.href = "http://127.0.0.1:5500/menu/index.html"
-        localStorage.removeItem("nickname");
-    }
+    // if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
+    // || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
+    //     const nick = localStorage.getItem("nickname");
+    //     let user = {nick, realCounter}
+    //     listaUsers.push(user);
+    //     listaUsers = JSON.stringify(listaUsers);
+    //     localStorage.setItem("user", listaUsers);
+    //     alert("Você Perdeu!")
+    //     character.style.top = "-40%"
+    //     realCounter = 0;
+    //     window.location.href = "http://127.0.0.1:5500/menu/index.html"
+    //     localStorage.removeItem("nickname");
+    // }
     
     var blockLeft = parseInt(window.getComputedStyle(block1).getPropertyValue("left"));
     var aviaoLeft = parseInt(window.getComputedStyle(aviao).getPropertyValue("left"));
@@ -125,6 +128,8 @@ function setHeight(random1, random2, random3) {
     block2.style.height = random1 + "%";
     aviao.style.top = random3 + "%";
     bird.style.top = random3 + "%";
+    abelha.style.top = random3 + "%";
+    roma.style.top = random3 + "%";
 }
 
 
