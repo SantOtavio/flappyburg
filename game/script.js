@@ -78,7 +78,8 @@ var interval = setInterval(() => {
     var boxRoma = roma.getBoundingClientRect();
     var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if ((characterTop > 160) || (rectIntersect(boxCharacter, boxBlock1)) || (rectIntersect(boxCharacter, boxBlock2))
-    || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao))) {
+    || (rectIntersect(boxCharacter, boxBird)) || (rectIntersect(boxCharacter, boxAviao)) || (rectIntersect(boxCharacter, boxRoma)) 
+        || (rectIntersect(boxCharacter, boxBee))) {
         const nick = localStorage.getItem("nickname");
         let user = {nick, realCounter}
         listaUsers.push(user);
