@@ -87,7 +87,7 @@ var interval = setInterval(() => {
         alert("Você Perdeu!")
         character.style.top = "-40%"
         realCounter = 0;
-        window.location.href = "http://127.0.0.1:5500/menu/index.html"
+        window.location.href = "https://flappyburg.vercel.app/menu/index.html"
         localStorage.removeItem("nickname");
     }
     
